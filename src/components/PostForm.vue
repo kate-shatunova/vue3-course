@@ -23,10 +23,8 @@
 </template>
 
 <script>
-import MyButton from "./UI/MyButton";
 export default {
   name: "PostForm",
-  components: {MyButton},
   data() {
     return {
       post: {
