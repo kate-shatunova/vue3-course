@@ -38,7 +38,16 @@ export default {
         body: ""
       }
     }
-  }
+  },
+  // для примера, установка watch на сложный тип данных
+  // watch: {
+  //   post: {
+  //     handler(newValue) {
+  //       console.log("post", newValue);
+  //     },
+  //     deep: true
+  //   }
+  // }
 }
 </script>
 
