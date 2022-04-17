@@ -1,12 +1,12 @@
 <template>
   <div class="app">
-    <h1>Страница с постами</h1>
+    <h1>Блог</h1>
 
     <div class="app__btns">
       <my-button
           @click="showDialog"
       >
-        Создать пост
+        Новый пост
       </my-button>
       <my-select
         v-model="selectedSort"
@@ -52,7 +52,7 @@ export default {
       isPostsLoading: false,
       selectedSort: "",
       sortOptions: [
-        // TODO: добавить сортировку по ID
+        {value: "id", name: "По id"},
         {value: "title", name: "По названию"},
         {value: "body", name: "По содержанию"}
       ]
@@ -86,7 +86,11 @@ export default {
   },
   computed: {
     sortedPosts() {
-      return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]))
+      if (this.selectedSort === "id") {
+        return [...this.posts].sort((post1, post2) => post1[this.selectedSort] - post2[this.selectedSort]);
+      } else {
+        return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]));
+      }
     }
   },
   watch: {
