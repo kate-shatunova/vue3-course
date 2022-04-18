@@ -14,17 +14,36 @@
       />
     </div>
 
+    <my-input
+      v-model="searchQuery"
+      placeholder="Поиск по заголовку"
+    />
+
     <my-dialog v-model:show="dialogVisible">
       <post-form
           @create="createPost"
       />
     </my-dialog>
     <post-list
-        :posts="sortedPosts"
+        :posts="sortedAndSearchedPosts"
         @remove="removePost"
         v-if="!isPostsLoading"
     />
     <div v-else>Идёт загрузка...</div>
+    <!-- TODO: вынести в отдельный компонент, props - количество страниц -->
+    <div class="page__wrapper">
+      <div
+          v-for="pageNumber in totalPages"
+          :key="pageNumber"
+          class="page"
+          :class="{
+            'page-current' : pageNumber === page
+          }"
+          @click="changePage(pageNumber)"
+      >
+        {{ pageNumber }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,10 +54,12 @@ import MyDialog from "./components/UI/MyDialog";
 import MyButton from "./components/UI/MyButton";
 import axios from "axios";
 import MySelect from "./components/UI/MySelect";
+import MyInput from "./components/UI/MyInput";
 
 export default {
   name: "App",
   components: {
+    MyInput,
     MySelect,
     MyButton,
     MyDialog,
@@ -51,6 +72,10 @@ export default {
       dialogVisible: false,
       isPostsLoading: false,
       selectedSort: "",
+      searchQuery: "",
+      page: 1,
+      limit: 5,
+      totalPages: 0,
       sortOptions: [
         {value: "id", name: "По id"},
         {value: "title", name: "По названию"},
@@ -69,10 +94,19 @@ export default {
     showDialog() {
       this.dialogVisible = true;
     },
+    changePage(pageNumber) {
+      this.page = pageNumber;
+    },
     async fetchPosts() {
       this.isPostsLoading = true;
       try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=5");
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts", {
+          params: {
+            _limit: this.limit,
+            _page: this.page
+          }
+        });
+        this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
         this.posts = response.data;
       } catch (e) {
         alert("Ошибка!!!");
@@ -91,9 +125,15 @@ export default {
       } else {
         return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]));
       }
+    },
+    sortedAndSearchedPosts() {
+      return this.sortedPosts.filter(post => post.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
     }
   },
   watch: {
+    page() {
+      this.fetchPosts()
+    }
   }
 }
 </script>
@@ -115,4 +155,18 @@ export default {
   justify-content: space-between;
 }
 
+.page__wrapper {
+  display: flex;
+  margin-top: 15px;
+}
+
+.page {
+  border: 1px solid black;
+  padding: 10px;
+  margin-right: 2px;
+}
+
+.page-current {
+  border: 2px solid teal;
+}
 </style>
