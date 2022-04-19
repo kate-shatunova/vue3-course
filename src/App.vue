@@ -9,14 +9,14 @@
         Новый пост
       </my-button>
       <my-select
-        v-model="selectedSort"
-        :options="sortOptions"
+          v-model="selectedSort"
+          :options="sortOptions"
       />
     </div>
 
     <my-input
-      v-model="searchQuery"
-      placeholder="Поиск по заголовку"
+        v-model="searchQuery"
+        placeholder="Поиск по заголовку"
     />
 
     <my-dialog v-model:show="dialogVisible">
@@ -29,21 +29,13 @@
         @remove="removePost"
         v-if="!isPostsLoading"
     />
-    <div v-else>Идёт загрузка...</div>
-    <!-- TODO: вынести в отдельный компонент, props - количество страниц -->
-    <div class="page__wrapper">
-      <div
-          v-for="pageNumber in totalPages"
-          :key="pageNumber"
-          class="page"
-          :class="{
-            'page-current' : pageNumber === page
-          }"
-          @click="changePage(pageNumber)"
-      >
-        {{ pageNumber }}
-      </div>
-    </div>
+    <div v-else class="load">Идёт загрузка...</div>
+
+    <my-pagination
+        @change-page="fetchPosts"
+        :total-pages="totalPages"
+    />
+
   </div>
 </template>
 
@@ -55,10 +47,12 @@ import MyButton from "./components/UI/MyButton";
 import axios from "axios";
 import MySelect from "./components/UI/MySelect";
 import MyInput from "./components/UI/MyInput";
+import MyPagination from "./components/UI/MyPagination";
 
 export default {
   name: "App",
   components: {
+    MyPagination,
     MyInput,
     MySelect,
     MyButton,
@@ -73,7 +67,6 @@ export default {
       isPostsLoading: false,
       selectedSort: "",
       searchQuery: "",
-      page: 1,
       limit: 5,
       totalPages: 0,
       sortOptions: [
@@ -93,9 +86,6 @@ export default {
     },
     showDialog() {
       this.dialogVisible = true;
-    },
-    changePage(pageNumber) {
-      this.page = pageNumber;
     },
     async fetchPosts() {
       this.isPostsLoading = true;
@@ -155,18 +145,7 @@ export default {
   justify-content: space-between;
 }
 
-.page__wrapper {
-  display: flex;
-  margin-top: 15px;
-}
-
-.page {
-  border: 1px solid black;
-  padding: 10px;
-  margin-right: 2px;
-}
-
-.page-current {
-  border: 2px solid teal;
+.load {
+  margin-top: 10px;
 }
 </style>
