@@ -22,4 +22,9 @@ export default {
 .app {
   padding: 20px;
 }
+
+.post-title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
 </style>

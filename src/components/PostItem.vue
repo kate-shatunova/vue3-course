@@ -11,6 +11,7 @@
         Открыть
       </my-button>
       <my-button
+          style="margin-left: 20px"
           @click="$emit('remove', post)"
       >
         Удалить
@@ -32,10 +33,6 @@ export default {
 </script>
 
 <style scoped>
-.post-title {
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
 .post {
   padding: 15px;
   border: 2px solid teal;

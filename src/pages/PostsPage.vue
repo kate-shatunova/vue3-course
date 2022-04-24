@@ -51,7 +51,7 @@ import MyInput from "@/components/UI/MyInput";
 import MyPagination from "@/components/UI/MyPagination";
 
 export default {
-  name: "App",
+  name: "PostsPage",
   components: {
     MyPagination,
     MyInput,
