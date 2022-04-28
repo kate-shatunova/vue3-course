@@ -2,7 +2,7 @@
   <div class="post">
     <div>
       <div><h3 class="post-title">{{ post.title }}</h3></div>
-      <div><strong>Текст:</strong> {{ post.body }}</div>
+      <p class="post-text"><strong>Текст:</strong> {{ post.body }}</p>
     </div>
     <div class="post__btns">
       <my-button
@@ -41,7 +41,15 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+
 .post__btns {
   display: flex;
+}
+
+.post-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 600px;
 }
 </style>
