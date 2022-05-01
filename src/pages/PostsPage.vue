@@ -17,6 +17,7 @@
     <my-input
         v-model="searchQuery"
         placeholder="Поиск по заголовку"
+        v-focus
     />
 
     <my-dialog v-model:show="dialogVisible">
@@ -30,7 +31,7 @@
         v-if="!isPostsLoading"
     />
     <div v-else class="load">Идёт загрузка...</div>
-    <div ref="observer" class="observer"></div>
+    <div v-intersection="loadMorePosts" class="observer"></div>
 
     <!--    <my-pagination-->
     <!--        @change-page="fetchPosts"-->
@@ -124,18 +125,6 @@ export default {
   },
   mounted() {
     this.fetchPosts();
-
-    const options = {
-      rootMargin: '0px',
-      threshold: 1.0
-    }
-    const callback = (entries, observer) => {
-      if (entries[0].isIntersecting && this.page < this.totalPages) {
-        this.loadMorePosts();
-      }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer);
   },
   computed: {
     sortedPosts() {
