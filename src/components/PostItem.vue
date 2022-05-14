@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div>
-      <div><h3 class="post-title">{{ post.title }}</h3></div>
+      <h3 class="post-title">{{ post.title }}</h3>
       <p class="post-text"><strong>Текст:</strong> {{ post.body }}</p>
     </div>
     <div class="post__btns">
