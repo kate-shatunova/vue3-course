@@ -1,3 +1,5 @@
+import "bootstrap/dist/css/bootstrap.css"
+import "@/styles/icons.css"
 import {createApp} from 'vue'
 import App from './App'
 import components from '@/components/UI'
@@ -21,3 +23,5 @@ app
   .use(router)
   .use(store)
   .mount('#app')
+
+import "bootstrap/dist/js/bootstrap"

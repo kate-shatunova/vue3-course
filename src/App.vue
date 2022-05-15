@@ -1,8 +1,17 @@
 <template>
-  <nav-bar></nav-bar>
-  <div class="app">
-    <router-view></router-view>
+  <div class="app container">
+    <div class="row">
+      <div class="col-12 col-sm-4 col-lg-3">
+        <nav-bar></nav-bar>
+      </div>
+      <div class="col-12 col-sm-8 col-lg-9">
+        <div class="col-md-12 page-body">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>

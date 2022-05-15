@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Блог</h1>
+  <div class="row">
+    <title-page/>
 
     <div class="app__btns">
       <my-button
@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import TitlePage from "@/components/TitlePage";
 import PostList from "@/components/PostList";
 import PostForm from "@/components/PostForm";
 import MyDialog from "@/components/UI/MyDialog";
@@ -54,6 +55,7 @@ import MyPagination from "@/components/UI/MyPagination";
 export default {
   name: "PostsPage",
   components: {
+    TitlePage,
     MyPagination,
     MyInput,
     MySelect,
