@@ -1,5 +1,9 @@
 <template>
-  <div>
+  <div class="row">
+    <title-page
+      title="About Me"
+      icon="icon-envelope"
+    />
     <p>Данное приложение было создано в учебных целях по видеокурсу с канала Ulbi TV</p>
     <a href="https://www.youtube.com/watch?v=XzLuMtDelGk&t=7126s" target="_blank">Vue 3 фундаментальный курс от А до Я</a>
 
@@ -13,8 +17,13 @@
 </template>
 
 <script>
+import TitlePage from "../components/TitlePage";
+
 export default {
-  name: "About"
+  name: "About",
+  components: {
+    TitlePage
+  }
 }
 </script>
 

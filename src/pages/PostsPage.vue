@@ -1,6 +1,9 @@
 <template>
   <div class="row">
-    <title-page/>
+    <title-page
+      title="My Blog"
+      icon="icon-envelope"
+    />
 
     <div class="app__btns">
       <my-button

@@ -1,13 +1,27 @@
 <template>
   <div class="sub-title">
-    <h2>Блог</h2>
-    <a href="contact.html"><i class="icon-envelope"></i></a>
+    <h2>{{ title }}</h2>
+    <a @click="$router.push('/about')"><i :class="icon"></i></a>
   </div>
 </template>
 
 <script>
 export default {
-  name: "TitlePage"
+  name: "TitlePage",
+  props: {
+    title: {
+      type: String,
+      default: "Блог"
+    },
+    route: {
+      type: String,
+      default: "/about"
+    },
+    icon: {
+      type: String,
+      default: "icon-envelope"
+    }
+  }
 }
 </script>
 
