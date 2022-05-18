@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "@/styles/icons.css"
 import {createApp} from 'vue'
 import App from './App'
+
 import components from '@/components/UI'
 import router from '@/router/router';
 import store from "./store";

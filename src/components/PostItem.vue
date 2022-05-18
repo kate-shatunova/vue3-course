@@ -1,9 +1,16 @@
 <template>
-  <div class="post">
-    <div>
-      <h3 class="post-title">{{ post.title }}</h3>
-      <p class="post-text"><strong>Текст:</strong> {{ post.body }}</p>
+  <div class="col-md-12 blog-post">
+
+    <div class="post-title">
+      <a href="#"><h1>{{ post.title }}</h1></a>
     </div>
+
+    <div class="post-info">
+      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
+    </div>
+
+    <p class="post-text">{{ post.body }}</p>
+
     <div class="post__btns">
       <my-button
           @click="$router.push(`/posts/${post.id}`)"
@@ -33,13 +40,8 @@ export default {
 </script>
 
 <style scoped>
-.post {
-  padding: 15px;
-  border: 2px solid teal;
-  margin-top: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+div.blog-post {
+  margin-bottom: 50px;
 }
 
 .post__btns {
@@ -51,5 +53,22 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 600px;
+}
+
+.blog-post .post-title h1 {
+  color: #333333;
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 700;
+  margin-top: 24px;
+}
+
+.blog-post p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #696868;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  font-family: "Poppins", sans-serif;
 }
 </style>

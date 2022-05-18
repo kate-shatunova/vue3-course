@@ -5,7 +5,8 @@ import About from "../pages/About";
 import PostIdPage from "../pages/PostIdPage";
 import PostsPageWithStore from "../pages/PostsPageWithStore";
 import PostsPageCompositionAPI from "../pages/PostsPageCompositionAPI";
-
+import Contact from "../pages/Contact";
+import Work from "../pages/Work";
 
 const routes = [
     {
@@ -15,10 +16,6 @@ const routes = [
     {
         path: "/posts",
         component: PostsPage
-    },
-    {
-        path: "/about",
-        component: About
     },
     {
         path: '/posts/:id',
@@ -32,6 +29,18 @@ const routes = [
         path: '/composition',
         component: PostsPageCompositionAPI
     },
+    {
+        path: "/about",
+        component: About
+    },
+    {
+        path: "/contact",
+        component: Contact
+    },
+    {
+        path: "/work",
+        component: Work,
+    }
 ]
 
 const router = createRouter({
