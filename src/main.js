@@ -25,4 +25,4 @@ app
   .use(store)
   .mount('#app')
 
-import "bootstrap/dist/js/bootstrap"
+import "bootstrap/dist/js/bootstrap.min"

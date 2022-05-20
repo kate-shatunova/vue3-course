@@ -11,7 +11,7 @@ import Work from "../pages/Work";
 const routes = [
     {
         path: "/",
-        component: Main
+        component: PostsPage
     },
     {
         path: "/posts",

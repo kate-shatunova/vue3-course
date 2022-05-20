@@ -2,7 +2,7 @@
   <div class="about-fixed">
 
     <div class="my-pic">
-      <img src="@/images/pic/my-pic.png" alt="">
+      <img src="@/images/pic/ava.jpg" alt="">
       <menu-link />
     </div>
 

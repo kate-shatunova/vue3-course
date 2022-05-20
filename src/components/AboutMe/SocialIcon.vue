@@ -1,7 +1,6 @@
 <template>
   <ul class="social-icon">
-    <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
-    <li><a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+    <li><a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
     <li><a href="#" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
     <li><a href="#" target="_blank" class="github"><i class="fa fa-github"></i></a></li>
   </ul>
@@ -53,6 +52,66 @@ export default {
 
 .social-icon li a:hover {
   box-shadow: 0px 8px 15px 0px rgba(90, 91, 95, 0.33);
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.google-plus {
+  background-color: #dd4b39;
+}
+
+.instagram {
+  background-color: #464545;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.pinterest {
+  background-color: #bd081c;
+}
+
+.youtube {
+  background-color: #cd201f;
+}
+
+.vimeo {
+  background-color: #1ab7ea;
+}
+
+.dribbble {
+  background-color: #ea4c89;
+}
+
+.behance {
+  background-color: #1769ff;
+}
+
+.flickr {
+  background-color: #ff0084;
+}
+
+.tumblr {
+  background-color: #35465c;
+}
+
+.foursquare {
+  background-color: #f94877;
+}
+
+.github {
+  background-color: #333333;
+}
+
+.skype {
+  background-color: #00aff0;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
