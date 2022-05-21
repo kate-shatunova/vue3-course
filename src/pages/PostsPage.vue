@@ -5,38 +5,38 @@
       icon="icon-envelope"
     />
 
-    <div class="col-md-12 content-page">
-      <div class="app__btns">
-        <my-button
-            @click="showDialog"
-        >
-          Новый пост
-        </my-button>
-        <my-select
-            v-model="selectedSort"
-            :options="sortOptions"
-        />
-      </div>
+<!--    <div class="col-md-12 content-page">-->
+<!--      <div class="app__btns">-->
+<!--        <my-button-->
+<!--            @click="showDialog"-->
+<!--        >-->
+<!--          Новый пост-->
+<!--        </my-button>-->
+<!--        <my-select-->
+<!--            v-model="selectedSort"-->
+<!--            :options="sortOptions"-->
+<!--        />-->
+<!--      </div>-->
 
-      <my-input
-          v-model="searchQuery"
-          placeholder="Поиск по заголовку"
-          v-focus
-      />
+<!--      <my-input-->
+<!--          v-model="searchQuery"-->
+<!--          placeholder="Поиск по заголовку"-->
+<!--          v-focus-->
+<!--      />-->
 
-      <my-dialog v-model:show="dialogVisible">
-        <post-form
-            @create="createPost"
-        />
-      </my-dialog>
-      <post-list
-          :posts="sortedAndSearchedPosts"
-          @remove="removePost"
-          v-if="!isPostsLoading"
-      />
-      <div v-else class="load">Идёт загрузка...</div>
-      <div v-intersection="loadMorePosts" class="observer"></div>
-    </div>
+<!--      <my-dialog v-model:show="dialogVisible">-->
+<!--        <post-form-->
+<!--            @create="createPost"-->
+<!--        />-->
+<!--      </my-dialog>-->
+<!--      <post-list-->
+<!--          :posts="sortedAndSearchedPosts"-->
+<!--          @remove="removePost"-->
+<!--          v-if="!isPostsLoading"-->
+<!--      />-->
+<!--      <div v-else class="load">Идёт загрузка...</div>-->
+<!--      <div v-intersection="loadMorePosts" class="observer"></div>-->
+<!--    </div>-->
 
     <!--    <my-pagination-->
     <!--        @change-page="fetchPosts"-->

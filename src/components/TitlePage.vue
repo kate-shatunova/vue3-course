@@ -1,7 +1,7 @@
 <template>
   <div class="sub-title">
-    <h2>{{ title }}</h2>
-    <a @click="$router.push('/about')"><i :class="icon"></i></a>
+    <h2 class="h2">{{ title }}</h2>
+    <a @click="$router.push('/about')" href><i :class="icon"></i></a>
   </div>
 </template>
 

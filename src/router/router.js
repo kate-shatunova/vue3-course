@@ -1,4 +1,3 @@
-import Main from "../pages/Main";
 import {createRouter, createWebHistory} from "vue-router";
 import PostsPage from "../pages/PostsPage";
 import About from "../pages/About";
