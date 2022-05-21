@@ -1,7 +1,10 @@
 <template>
   <div class="col-md-12 page-body margin-top-50 footer">
     <footer>
-      <my-menu/>
+      <my-menu
+        isInline="true"
+        isFooter="true"
+      />
 
       <p>© Copyright {{ currentYear }}. All rights reserved</p>
 

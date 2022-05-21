@@ -68,85 +68,85 @@ export default {
     MyDialog,
     PostList,
     PostForm
-  },
-  data() {
-    return {
-      posts: [],
-      dialogVisible: false,
-      isPostsLoading: false,
-      selectedSort: "",
-      searchQuery: "",
-      limit: 10,
-      page: 1,
-      totalPages: 0,
-      sortOptions: [
-        {value: "id", name: "По id"},
-        {value: "title", name: "По названию"},
-        {value: "body", name: "По содержанию"}
-      ]
-    }
-  },
-  methods: {
-    createPost(post) {
-      this.posts.push(post);
-      this.dialogVisible = false
-    },
-    removePost(post) {
-      this.posts = this.posts.filter(p => p.id !== post.id);
-    },
-    showDialog() {
-      this.dialogVisible = true;
-    },
-    async fetchPosts() {
-      this.isPostsLoading = true;
-      try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts", {
-          params: {
-            _limit: this.limit,
-            _page: this.page
-          }
-        });
-        this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
-        this.posts = response.data;
-      } catch (e) {
-        alert("Ошибка!!!");
-      } finally {
-        this.isPostsLoading = false;
-      }
-    },
-    async loadMorePosts() {
-      this.page += 1;
-      try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts", {
-          params: {
-            _limit: this.limit,
-            _page: this.page
-          }
-        });
-        this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
-        this.posts = [...this.posts, ...response.data];
-      } catch (e) {
-        alert("Ошибка!!!");
-      }
-    }
-  },
-  mounted() {
-    this.fetchPosts();
-  },
-  computed: {
-    sortedPosts() {
-      if (this.selectedSort === "id") {
-        return [...this.posts].sort((post1, post2) => post1[this.selectedSort] - post2[this.selectedSort]);
-      } else {
-        return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]));
-      }
-    },
-    sortedAndSearchedPosts() {
-      return this.sortedPosts.filter(post => post.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
-    }
-  },
-  watch: {
   }
+  // data() {
+  //   return {
+  //     posts: [],
+  //     dialogVisible: false,
+  //     isPostsLoading: false,
+  //     selectedSort: "",
+  //     searchQuery: "",
+  //     limit: 10,
+  //     page: 1,
+  //     totalPages: 0,
+  //     sortOptions: [
+  //       {value: "id", name: "По id"},
+  //       {value: "title", name: "По названию"},
+  //       {value: "body", name: "По содержанию"}
+  //     ]
+  //   }
+  // },
+  // methods: {
+  //   createPost(post) {
+  //     this.posts.push(post);
+  //     this.dialogVisible = false
+  //   },
+  //   removePost(post) {
+  //     this.posts = this.posts.filter(p => p.id !== post.id);
+  //   },
+  //   showDialog() {
+  //     this.dialogVisible = true;
+  //   },
+  //   async fetchPosts() {
+  //     this.isPostsLoading = true;
+  //     try {
+  //       const response = await axios.get("https://jsonplaceholder.typicode.com/posts", {
+  //         params: {
+  //           _limit: this.limit,
+  //           _page: this.page
+  //         }
+  //       });
+  //       this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
+  //       this.posts = response.data;
+  //     } catch (e) {
+  //       alert("Ошибка!!!");
+  //     } finally {
+  //       this.isPostsLoading = false;
+  //     }
+  //   },
+  //   async loadMorePosts() {
+  //     this.page += 1;
+  //     try {
+  //       const response = await axios.get("https://jsonplaceholder.typicode.com/posts", {
+  //         params: {
+  //           _limit: this.limit,
+  //           _page: this.page
+  //         }
+  //       });
+  //       this.totalPages = Math.ceil(response.headers["x-total-count"] / this.limit);
+  //       this.posts = [...this.posts, ...response.data];
+  //     } catch (e) {
+  //       alert("Ошибка!!!");
+  //     }
+  //   }
+  // },
+  // mounted() {
+  //   this.fetchPosts();
+  // },
+  // computed: {
+  //   sortedPosts() {
+  //     if (this.selectedSort === "id") {
+  //       return [...this.posts].sort((post1, post2) => post1[this.selectedSort] - post2[this.selectedSort]);
+  //     } else {
+  //       return [...this.posts].sort((post1, post2) => post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]));
+  //     }
+  //   },
+  //   sortedAndSearchedPosts() {
+  //     return this.sortedPosts.filter(post => post.title.toLowerCase().includes(this.searchQuery.toLowerCase()));
+  //   }
+  // },
+  // watch: {
+  // }
 }
 </script>
 

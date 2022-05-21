@@ -2,7 +2,9 @@
   <div class="about-fixed">
 
     <div class="my-pic">
-      <img src="@/images/pic/ava.jpg" alt="">
+      <a @click="$router.push('/')">
+        <img src="@/images/pic/ava.jpg" alt="">
+      </a>
       <menu-link />
     </div>
 

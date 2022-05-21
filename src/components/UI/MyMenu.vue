@@ -1,5 +1,7 @@
 <template>
-    <ul class="menu-link">
+    <ul
+      :class="['menu-link', extraCLass]"
+    >
       <li><a @click="$router.push('/about')">About</a></li>
       <li><a @click="$router.push('/work')">Work</a></li>
       <li><a @click="$router.push('/contact')">Contact</a></li>
@@ -10,7 +12,23 @@
 
 <script>
 export default {
-  name: "my-menu"
+  name: "my-menu",
+  props: {
+    isInline: {
+      type: Boolean,
+      default: false
+    },
+    isFooter: {
+      type: Boolean,
+      default: false
+    },
+  },
+  computed: {
+    extraCLass: function() {
+      return (this.isFooter ? "footer " : "") ||
+             (this.isInline ? "inline" : "");
+    }
+  }
 }
 </script>
 
@@ -37,12 +55,22 @@ export default {
   margin: 2px 4px;
 }
 
+.menu-link.inline li {
+  display: inline-block;
+}
+
 .menu-link li a {
   display: block;
   color: #333333;
   text-align: center;
   font-size: 13px;
   transition: all 0.3s ease-in-out;
+}
+
+.footer li a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
 }
 
 .menu-link li a:hover {

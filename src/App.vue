@@ -10,7 +10,6 @@
           <div class="col-md-12 page-body">
             <router-view></router-view>
           </div>
-
           <footer-page/>
         </div>
       </div>
@@ -29,6 +28,12 @@ export default {
 </script>
 
 <style>
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+}
+
 .app {
   margin: 50px 0;
 }
