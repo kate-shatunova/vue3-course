@@ -1,29 +1,30 @@
 <template>
+
   <div class="col-md-12 blog-post">
 
     <div class="post-title">
-      <a href="#"><h1>{{ post.title }}</h1></a>
+      <h1>{{ post.title }}</h1>
     </div>
 
     <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
+      <span>May 22, 2022 / by <a href="#" target="_blank">Kate Shatunova</a></span>
     </div>
 
     <p class="post-text">{{ post.body }}</p>
 
-    <div class="post__btns">
-      <my-button
-          @click="$router.push(`/posts/${post.id}`)"
-      >
-        Открыть
-      </my-button>
-      <my-button
-          style="margin-left: 20px"
-          @click="$emit('remove', post)"
-      >
-        Удалить
-      </my-button>
-    </div>
+<!--    <div class="post__btns">-->
+<!--      <my-button-->
+<!--          @click="$router.push(`/posts/${post.id}`)"-->
+<!--      >-->
+<!--        Открыть-->
+<!--      </my-button>-->
+<!--      <my-button-->
+<!--          style="margin-left: 20px"-->
+<!--          @click="$emit('remove', post)"-->
+<!--      >-->
+<!--        Удалить-->
+<!--      </my-button>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -44,15 +45,18 @@ div.blog-post {
   margin-bottom: 50px;
 }
 
-.post__btns {
-  display: flex;
+.blog-post .post-image img {
+  width: 100%;
 }
 
-.post-text {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 600px;
+.blog-post .post-image p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.blog-post .post-image a {
+  font-weight: 600;
 }
 
 .blog-post .post-title h1 {
@@ -61,6 +65,25 @@ div.blog-post {
   line-height: 45px;
   font-weight: 700;
   margin-top: 24px;
+}
+
+.blog-post .post-title h1::first-letter {
+  text-transform: uppercase;
+}
+
+.blog-post .post-title h2 {
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.blog-post .post-info {
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 500;
+  padding: 10px 0;
+  color: #8c8c8c;
 }
 
 .blog-post p {

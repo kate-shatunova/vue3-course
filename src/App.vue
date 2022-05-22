@@ -7,7 +7,7 @@
           <about-me></about-me>
         </div>
         <div class="col-12 col-sm-8 col-lg-9">
-          <div class="col-md-12 page-body">
+          <div class="page-body">
             <router-view></router-view>
           </div>
           <footer-page/>
@@ -31,7 +31,57 @@ export default {
 @font-face {
   font-family: "Poppins";
   src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-Thin.ttf) format("truetype");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-Light.ttf) format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
   url(./fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+  url(./fonts/Poppins/Poppins-Black.ttf) format("truetype");
+  font-weight: 900;
 }
 
 .app {

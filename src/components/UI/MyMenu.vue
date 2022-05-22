@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     extraCLass: function() {
-      return (this.isFooter ? "footer " : "") ||
+      return (this.isFooter ? "footer " : "") +
              (this.isInline ? "inline" : "");
     }
   }
