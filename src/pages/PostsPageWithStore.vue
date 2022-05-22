@@ -1,45 +1,48 @@
 <template>
-  <div>
-    <h1>Блог</h1>
+  <title-page
+    title="My Blog"
+    icon="icon-envelope"
+  />
 
-    <div class="app__btns">
-      <my-button
-          @click="showDialog"
-      >
-        Новый пост
-      </my-button>
-      <my-select
-          :model-value="selectedSort"
-          @update:model-value="setSelectedSort"
-          :options="sortOptions"
-      />
-    </div>
+  <div class="content-page">
 
-    <my-input
-        :model-value="searchQuery"
-        @update:model-value="setSearchQuery"
-        placeholder="Поиск по заголовку"
-        v-focus
-    />
+<!--    <div class="app__btns">-->
+<!--      <my-button-->
+<!--          @click="showDialog"-->
+<!--      >-->
+<!--        Новый пост-->
+<!--      </my-button>-->
+<!--      <my-select-->
+<!--          :model-value="selectedSort"-->
+<!--          @update:model-value="setSelectedSort"-->
+<!--          :options="sortOptions"-->
+<!--      />-->
+<!--    </div>-->
 
-    <my-dialog v-model:show="dialogVisible">
-      <post-form
-          @create="createPost"
-      />
-    </my-dialog>
+<!--    <my-input-->
+<!--        :model-value="searchQuery"-->
+<!--        @update:model-value="setSearchQuery"-->
+<!--        placeholder="Поиск по заголовку"-->
+<!--        v-focus-->
+<!--    />-->
+
+<!--    <my-dialog v-model:show="dialogVisible">-->
+<!--      <post-form-->
+<!--          @create="createPost"-->
+<!--      />-->
+<!--    </my-dialog>-->
     <post-list
         :posts="sortedAndSearchedPosts"
         @remove="removePost"
         v-if="!isPostsLoading"
     />
-    <div v-else class="load">Идёт загрузка...</div>
-    <div v-intersection="loadMorePosts" class="observer"></div>
+<!--    <div v-else class="load">Идёт загрузка...</div>-->
+<!--    <div v-intersection="loadMorePosts" class="observer"></div>-->
 
     <!--    <my-pagination-->
     <!--        @change-page="fetchPosts"-->
     <!--        :total-pages="totalPages"-->
     <!--    />-->
-
   </div>
 </template>
 
@@ -52,11 +55,13 @@ import axios from "axios";
 import MySelect from "@/components/UI/MySelect";
 import MyInput from "@/components/UI/MyInput";
 import MyPagination from "@/components/UI/MyPagination";
+import TitlePage from "@/components/TitlePage";
 import {mapState, mapGetters, mapMutations, mapActions} from 'vuex';
 
 export default {
   name: "PostsPage",
   components: {
+    TitlePage,
     MyPagination,
     MyInput,
     MySelect,
