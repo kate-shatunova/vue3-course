@@ -1,19 +1,205 @@
 <template>
-  <div class="row">
-    <title-page
-      title="My Portfolio"
-      icon="icon-envelope"
-    />
-    <p>Данное приложение было создано в учебных целях по видеокурсу с канала Ulbi TV</p>
-    <a href="https://www.youtube.com/watch?v=XzLuMtDelGk&t=7126s" target="_blank">Vue 3 фундаментальный курс от А до Я</a>
 
-    <p>Используемые технологии:</p>
-    <ul>
-      <li>Vue 3</li>
-      <li>Bootstrap 5</li>
-    </ul>
+  <title-page
+    title="My Portfolio"
+    icon="icon-envelope"
+  />
+
+  <div class="content-page">
+    <div class="col-md-12 blog-post">
+
+      <div class="post-title margin-bottom-30">
+        <h1>Let's take a look on <span class="main-color">My Work</span></h1>
+      </div>
+
+      <div>
+        <!-- Portfolio Detail Start -->
+        <div class="row portfolio">
+          <div class="col-sm-6 custom-pad-1">
+            <img src="../images/portfolio/1.jpg" class="img-responsive" alt="">
+          </div>
+
+
+          <div class="col-sm-6 custom-pad-2">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+
+                <tr>
+                  <td><b>Skills</b></td>
+                  <td>HTML5 / CSS3 / JAVASCRIPT</td>
+                </tr>
+
+                <tr>
+                  <td><b>Duration</b></td>
+                  <td>20 Days</td>
+                </tr>
+
+                <tr>
+                  <td><b>Cost</b></td>
+                  <td>$5000</td>
+                </tr>
+
+                <tr>
+                  <td><b>Url</b></td>
+                  <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
+                </tr>
+
+                <tr>
+                  <td><b>About Project</b></td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam
+                    scelerisque ultricies euismod.
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Detail End -->
+
+        <!-- Portfolio Detail Start -->
+        <div class="row portfolio">
+          <div class="col-sm-6 custom-pad-1">
+            <div class="image-carousel">
+              <img src="../images/portfolio/2.jpg" class="img-responsive" alt="">
+              <img src="../images/portfolio/3.jpg" class="img-responsive" alt="">
+            </div>
+          </div>
+
+
+          <div class="col-sm-6 custom-pad-2">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+
+                <tr>
+                  <td><b>Skills</b></td>
+                  <td>HTML5 / CSS3 / JAVASCRIPT</td>
+                </tr>
+
+                <tr>
+                  <td><b>Duration</b></td>
+                  <td>20 Days</td>
+                </tr>
+
+                <tr>
+                  <td><b>Cost</b></td>
+                  <td>$5000</td>
+                </tr>
+
+                <tr>
+                  <td><b>Url</b></td>
+                  <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
+                </tr>
+
+                <tr>
+                  <td><b>About Project</b></td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam
+                    scelerisque ultricies euismod.
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Detail End -->
+
+        <!-- Portfolio Detail Start -->
+        <div class="row portfolio">
+          <div class="col-sm-6 custom-pad-1">
+            <img src="../images/portfolio/4.jpg" class="img-responsive" alt="">
+          </div>
+
+
+          <div class="col-sm-6 custom-pad-2">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+
+                <tr>
+                  <td><b>Skills</b></td>
+                  <td>HTML5 / CSS3 / JAVASCRIPT</td>
+                </tr>
+
+                <tr>
+                  <td><b>Duration</b></td>
+                  <td>20 Days</td>
+                </tr>
+
+                <tr>
+                  <td><b>Cost</b></td>
+                  <td>$5000</td>
+                </tr>
+
+                <tr>
+                  <td><b>Url</b></td>
+                  <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
+                </tr>
+
+                <tr>
+                  <td><b>About Project</b></td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam scelerisque ultricies euismod.</td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Detail End -->
+
+        <!-- Portfolio Detail Start -->
+        <div class="row portfolio">
+          <div class="col-sm-6 custom-pad-1">
+            <img src="../images/portfolio/6.jpg" class="img-responsive" alt="">
+          </div>
+
+
+          <div class="col-sm-6 custom-pad-2">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <tbody>
+
+                <tr>
+                  <td><b>Skills</b></td>
+                  <td>HTML5 / CSS3 / JAVASCRIPT</td>
+                </tr>
+
+                <tr>
+                  <td><b>Duration</b></td>
+                  <td>20 Days</td>
+                </tr>
+
+                <tr>
+                  <td><b>Cost</b></td>
+                  <td>$5000</td>
+                </tr>
+
+                <tr>
+                  <td><b>Url</b></td>
+                  <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
+                </tr>
+
+                <tr>
+                  <td><b>About Project</b></td>
+                  <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam scelerisque ultricies euismod.</td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio Detail End -->
+      </div>
+
+    </div>
   </div>
-  
+
 </template>
 
 <script>
