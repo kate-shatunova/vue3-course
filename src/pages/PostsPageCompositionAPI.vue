@@ -1,25 +1,30 @@
 <template>
-  <div>
-    <h1>Блог</h1>
 
-    <div class="app__btns">
-      <my-select
-          v-model="selectedSort"
-          :options="sortOptions"
-      />
-    </div>
+  <title-page
+    title="My Blog"
+    icon="icon-envelope"
+  />
 
-    <my-input
-        v-model="searchQuery"
-        placeholder="Поиск по заголовку"
-        v-focus
-    />
+  <div class="content-page">
+
+<!--    <div class="app__btns">-->
+<!--      <my-select-->
+<!--          v-model="selectedSort"-->
+<!--          :options="sortOptions"-->
+<!--      />-->
+<!--    </div>-->
+
+<!--    <my-input-->
+<!--        v-model="searchQuery"-->
+<!--        placeholder="Поиск по заголовку"-->
+<!--        v-focus-->
+<!--    />-->
 
     <post-list
         :posts="sortedAndSearchedPosts"
         v-if="!isPostsLoading"
     />
-    <div v-else class="load">Идёт загрузка...</div>
+<!--    <div v-else class="load">Идёт загрузка...</div>-->
 
     <!--    <my-pagination-->
     <!--        @change-page="fetchPosts"-->
@@ -27,9 +32,11 @@
     <!--    />-->
 
   </div>
+
 </template>
 
 <script>
+import TitlePage from "@/components/TitlePage";
 import PostList from "@/components/PostList";
 import PostForm from "@/components/PostForm";
 import MyDialog from "@/components/UI/MyDialog";
@@ -46,6 +53,7 @@ import useSortedAndSearchedPosts from "../hooks/userSortedAndSearchedPosts";
 export default {
   name: "PostsPage",
   components: {
+    TitlePage,
     MyPagination,
     MyInput,
     MySelect,
