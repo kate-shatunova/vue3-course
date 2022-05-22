@@ -3,7 +3,8 @@
    Table Of Content
 
    1. Global Style
-   2. Useful Classes ( Such as : Margin, Padding, colors  )
+   2. List
+   3. Useful Classes ( Such as : Margin, Padding, colors  )
 
  */
 
@@ -153,6 +154,28 @@ button {
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
+/* List */
+
+.list ul {
+    margin-top: 15px;
+}
+
+.list li {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.list-style li {
+    list-style-type: decimal;
+}
+
+.list-style-2 li {
+    list-style-type: circle;
+}
+
 
 /* Useful Classes */
 
