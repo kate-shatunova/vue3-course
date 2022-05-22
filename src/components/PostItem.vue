@@ -12,6 +12,8 @@
 
     <p class="post-text">{{ post.body }}</p>
 
+    <a href @click="$router.push(`/posts/${post.id}`)" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+
 <!--    <div class="post__btns">-->
 <!--      <my-button-->
 <!--          @click="$router.push(`/posts/${post.id}`)"-->
