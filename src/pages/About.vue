@@ -21,7 +21,11 @@
       tincidunt non ac arcu. Nunc gravida eu felis vel elementum. Vestibulum sodales quam ut tempor tempor Donec
       sollicitudin imperdiet nec tortor nec, tempor semper metus..</p>
 
-    <video-box/>
+    <my-video-box
+      url="https://www.youtube.com/watch?v=O2Bsw3lrhvs"
+      title="My Thought"
+      description="Take a look about my thought on website design."
+    />
 
     <!-- My Service Start -->
     <div class="post-title">
@@ -53,12 +57,12 @@
 import TitlePage from "../components/TitlePage";
 import ContentPage from "../components/ContentPage";
 import Knowledge from "../components/AboutPage/Knowledge";
-import VideoBox from "../components/VideoBox";
+import MyVideoBox from "../components/UI/MyVideoBox";
 
 export default {
   name: "About",
   components: {
-    VideoBox,
+    MyVideoBox,
     Knowledge,
     TitlePage,
     ContentPage

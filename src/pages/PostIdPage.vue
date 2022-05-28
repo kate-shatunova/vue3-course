@@ -4,7 +4,7 @@
     icon="icon-envelope"
   />
 
-  <div class="content-page">
+  <content-page>
     <div class="blog-post">
       <div class="post-title">
         <h1>{{ post.title }}</h1>
@@ -41,14 +41,11 @@
       laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodale Sed posuere nisi ipsum.</p>
 
     <!-- Post Video Tutorial Start -->
-    <div class="video-box margin-top-40 margin-bottom-40">
-      <div class="video-tutorial">
-        <a class="video-popup" href="https://www.youtube.com/watch?v=O2Bsw3lrhvs" title="Video Tutorial">
-          <img src="../images/blog/4.jpg" alt="">
-        </a>
-      </div>
-      <p>Integrate video on magnific popup for fast page load.</p>
-    </div>
+    <my-video-box
+      url="https://www.youtube.com/watch?v=O2Bsw3lrhvs"
+      title="Video Tutorial"
+      description="Integrate video on magnific popup for fast page load."
+    />
     <!-- Post Video Tutorial End -->
 
 
@@ -227,7 +224,7 @@
     </div>
     <!-- You May Also Like End -->
 
-  </div>
+  </content-page>
 
 
 
@@ -242,10 +239,12 @@
 <script>
 import axios from "axios";
 import TitlePage from "@/components/TitlePage";
+import ContentPage from "@/components/ContentPage";
+import MyVideoBox from "@/components/UI/MyVideoBox";
 
 export default {
   name: "PostIdPage",
-  components: {TitlePage},
+  components: {ContentPage, TitlePage, MyVideoBox},
   data() {
     return {
       post: ""

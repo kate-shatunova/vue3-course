@@ -1,17 +1,35 @@
 <template>
   <div class="video-box margin-top-40 margin-bottom-80">
     <div class="video-tutorial">
-      <a class="video-popup" href="https://www.youtube.com/watch?v=O2Bsw3lrhvs" title="My Thought">
-        <img src="../images/pic/my-pic.png" alt="">
+      <a
+        class="video-popup"
+        :href="url"
+        :title="title"
+      >
+        <img src="../../images/pic/my-pic.png" alt="">
       </a>
     </div>
-    <p>Take a look about my thought on website design.</p>
+    <p>{{ description }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "VideoBox"
+  name: "MyVideoBox",
+  props: {
+    url: {
+      type: String,
+      required: true
+    },
+    title: {
+      type: String,
+      default: ""
+    },
+    description: {
+      type: String,
+      default: ""
+    }
+  }
 }
 </script>
 
@@ -21,7 +39,7 @@ export default {
   width: 70%;
   margin: 0 auto;
   height: 100%;
-  box-shadow: 0px 7px 13px 0px rgba(2, 2, 2, 0.56);
+  box-shadow: 0 7px 13px 0 rgba(2, 2, 2, 0.56);
 }
 
 .video-tutorial {
