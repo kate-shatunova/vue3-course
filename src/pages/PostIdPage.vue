@@ -55,9 +55,7 @@
 
 
     <!-- Post Blockquote Start -->
-    <div class="post-quote margin-top-40 margin-bottom-40">
-      <blockquote>Design is not just what is look like, Design is how it's work.</blockquote>
-    </div>
+    <my-blockquote text="Design is not just what is look like, Design is how it's work." />
     <!-- Post Blockquote End -->
 
 
@@ -241,10 +239,11 @@ import axios from "axios";
 import TitlePage from "@/components/TitlePage";
 import ContentPage from "@/components/ContentPage";
 import MyVideoBox from "@/components/UI/MyVideoBox";
+import MyBlockquote from "../components/UI/MyBlockquote";
 
 export default {
   name: "PostIdPage",
-  components: {ContentPage, TitlePage, MyVideoBox},
+  components: {MyBlockquote, ContentPage, TitlePage, MyVideoBox},
   data() {
     return {
       post: ""
